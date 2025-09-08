@@ -1,6 +1,6 @@
 
 import logging
-
+import signal
 log = logging.getLogger(__name__)
 
 from usrbot import Config
@@ -56,6 +56,18 @@ class UsrBot(Client):
 
     
     async def start(self):
+
+
+        loop = asyncio.get_running_loop()
+        for sig in (signal.SIGTERM, signal.SIGINT):
+            loop.add_signal_handler(
+                sig,
+                lambda: asyncio.create_task(
+                    self.shutdown(sig)
+                )
+            )
+
+
         await super().start()
         # schedule.every(1).minutes.do(await self.restart())
 
@@ -93,6 +105,24 @@ class UsrBot(Client):
 
 
 
+
+
+    async def shutdown(self, signal=None):
+        log.info(f"Received exit signal {signal.name if signal else 'unknown'}....")
+        await self.stop()
+
+        tasks = [
+            t for t in asyncio.all_tasks() if t is not asyncio.current_task()
+        ]
+
+        [task.cancel() for task in tasks]
+
+        await asyncio.gather(
+            *tasks,
+            return_exceptions=True
+        )
+
+        asyncio.get_event_loop().stop()
 
 def test():
     print("Test from {__name__} ... Done")
