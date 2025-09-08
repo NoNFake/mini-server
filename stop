@@ -1,0 +1,15 @@
+#!/bin/bash
+
+
+# ids=`ps aux | grep $default | awk '{print $2}'`
+ids=`ps -C python3 -o pid | awk '{if(NR>1)print}'`
+
+for i in $ids
+do  
+    echo $i
+    kill -9 $i
+
+    pkill -TERM -f "python3 -m usrbot"
+    pkill -KILL -f "python3 -m usrbot"
+done
+
