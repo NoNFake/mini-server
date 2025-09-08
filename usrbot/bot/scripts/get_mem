@@ -1,0 +1,3 @@
+#!/bin/bash
+
+free -m | awk 'FNR==2{print}' | awk '{print "total: " $2/1024 "\nused:  "$3/1024 "\nfree:  "$4/1024}'
