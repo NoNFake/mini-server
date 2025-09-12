@@ -16,7 +16,7 @@ from .plugins.bat_alarm import check_bat, schedule_check
 async def main() -> None:
     # Initialize Bot instance with default bot properties which will be passed to all API calls
 
-    if bot in None:
+    if bot is None:
         return
 
 
