@@ -71,7 +71,7 @@ class UsrBot(Client):
         await super().start()
         # schedule.every(1).minutes.do(await self.restart())
 
-        await main() if config.bot_token else log.warning("BOT_TOKEN don't set! Starting without BOT")
+        await main() if config.bot_token != '' else log.warning("BOT_TOKEN don't set! Starting without BOT")
 
 
 

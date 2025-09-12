@@ -3,6 +3,7 @@ import schedule
 import time 
 
 # from handlers import bot_msg
+from .bot import bot, dp, chat_id
 from .handlers.bot_msg import start_router
 from .callback.bot_clb_msg import cbl_router
 
@@ -10,11 +11,14 @@ from .callback.bot_clb_msg import cbl_router
 from .plugins.bat_alarm import check_bat, schedule_check
 
 
-from .bot import bot, dp, chat_id
 
 
 async def main() -> None:
     # Initialize Bot instance with default bot properties which will be passed to all API calls
+
+    if bot in None:
+        return
+
 
     dp.include_routers(
         start_router,
@@ -35,5 +39,7 @@ async def main() -> None:
     schedule.every(1).minutes.do(schedule_check)
 
 
-# if __name__ == "__main__":
-#     asyncio.run(main())
+if __name__ == "__main__":
+    asyncio.run(main())
+
+__all__ = ['bot', 'dp', 'chat_id']
