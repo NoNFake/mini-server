@@ -35,12 +35,6 @@ async def status(client, message):
         return hash_str
 
 
-    
-
-
-
-
-
     for i in hash_gen():
         for j in hash_syb:
 

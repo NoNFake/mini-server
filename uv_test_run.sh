@@ -1,0 +1,4 @@
+uv run -m usrbot
+
+
+
