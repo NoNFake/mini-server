@@ -50,7 +50,7 @@ async def on_start():
 
 
 @UsrBot.on_message( 
-    filters.user(6423944607) & filters.regex(word_trigger)
+    filters.user(1022174802) & filters.regex(word_trigger)
 )
 
 
