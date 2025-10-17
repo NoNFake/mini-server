@@ -28,7 +28,7 @@ target = 1022174802
 
 
 sticker_cache = None
-sticker_file_id = "CAACAgIAAxkDAAIQoWjyloabRHkB2CYhpbNu15KP-LeqAAK0jAACptuYS8tDK8a8BfUuHgQ"
+sticker_file_id = None
 
 @autostart
 async def on_start():
