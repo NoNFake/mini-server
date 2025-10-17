@@ -1,10 +1,21 @@
 import random as rnd
+import sys
+from enum import Enum
 
-word = "привет"
-cenc = "*"
+
+class Memmory(Enum):
+    stik = "first" 
+    sti = "firs" 
+    stk = "firt" 
+    sik = "fist" 
+    tik = "frst" 
+
+# size = sys.getsizeof(Memmory.stik.value)
+# size_kb = size / 1024
 
 
-n: int = len(word)
+# print(f"Size: {size_kb} ")
 
-word = word.replace(rnd.choice(word), cenc)
-print(word)
+
+for i in Memmory:
+    print(i)

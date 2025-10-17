@@ -10,7 +10,7 @@ from usrbot.bot.main import main # async
 from pyrogram import Client, filters, __version__ as pyro_version
 from pyrogram.enums import ParseMode
 
-
+import functools
 # import schedule # https://schedule.readthedocs.io/en/stable/
 # import time
 import asyncio
@@ -71,6 +71,13 @@ class UsrBot(Client):
         await super().start()
         # schedule.every(1).minutes.do(await self.restart())
 
+        for func in _autostart_func:
+            try:
+                await func()
+            except Exception as e:
+                log.error(f"Autostart func {func.__name__} error: {e}")
+
+
         await main() if config.bot_token != '' else log.warning("BOT_TOKEN don't set! Starting without BOT")
 
 
@@ -126,3 +133,15 @@ class UsrBot(Client):
 
 def test():
     print("Test from {__name__} ... Done")
+
+_autostart_func = []
+def autostart(func):
+    @functools.wraps(func)
+
+    def wrapper(*args, **kwargs):
+        log.critical(f"start func {func.__name__}")
+        return func(*args, **kwargs)
+    
+    _autostart_func.append(wrapper)
+    return wrapper
+
