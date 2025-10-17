@@ -19,13 +19,8 @@ dp = Dispatcher()
 bot = None
 
 
-if TOKEN != '':
+try:
     logging.info(f"TOKEN: {TOKEN}\n")
-
-
     bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.MARKDOWN))
-else:
-    print("Enter ur TOKEN in .env")
-
-
-
+except:
+    logging.critical("Enter ur TOKEN in .env")

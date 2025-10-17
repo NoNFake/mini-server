@@ -17,3 +17,4 @@ wheels/
 statust_test.py
 uv.lock
 test.py
+.env copy
