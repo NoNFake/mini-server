@@ -28,7 +28,6 @@ target = 1022174802
 
 
 sticker_cache = None
-sticker_file_id = None
 
 @autostart
 async def on_start():
@@ -55,15 +54,15 @@ async def on_start():
 
 
 async def ban_words(client, message):
-    global sticker_file_id 
+    
     try:
         
         chat_id = message.chat.id
 
-        if sticker_file_id:
+        if sticker_cache:
             await client.send_sticker(
             chat_id= chat_id,
-            sticker=sticker_file_id
+            sticker=sticker_cache
         )
         else: 
             sticker_cache.seek(0)
