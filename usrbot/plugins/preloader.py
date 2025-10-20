@@ -4,7 +4,7 @@
 
 
 from pyrogram import filters
-from ..usrbot import UsrBot, autostart
+from ..usrbot import UsrBot
 import logging
 from sys import getsizeof
 
