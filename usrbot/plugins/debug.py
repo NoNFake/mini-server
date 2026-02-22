@@ -1,4 +1,4 @@
-from pyrogram import filters
+from hydrogram import filters
 from ..usrbot import UsrBot
 from ..sample_config import Config
 

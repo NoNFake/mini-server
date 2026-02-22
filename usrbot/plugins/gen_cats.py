@@ -1,7 +1,7 @@
 __command__ = ".cat"
 __info__ = "generate a cat in ascii format"
 
-from pyrogram import filters
+from hydrogram import filters
 from ..usrbot import UsrBot
 from ..usrbot import Config
 import os

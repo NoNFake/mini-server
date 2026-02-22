@@ -18,3 +18,5 @@ statust_test.py
 uv.lock
 test.py
 .env copy
+cookie.txt
+memmories.db

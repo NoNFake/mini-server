@@ -1,6 +1,6 @@
 from ..usrbot import UsrBot
-from pyrogram import filters, enums
-from pyrogram.errors import (
+from hydrogram import filters, enums
+from hydrogram.errors import (
     BotInlineDisabled,
     BotResponseTimeout)
 from ..sample_config import Config, MessagesTag

@@ -1,7 +1,7 @@
 UsrBot__command__ = ".help"
 __info__ = "Shows this help message"
 
-from pyrogram import filters
+from hydrogram import filters
 from ..usrbot import UsrBot
 
 

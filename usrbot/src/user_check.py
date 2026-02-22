@@ -1,5 +1,5 @@
 from ..usrbot import UsrBot
-from pyrogram import filters, enums
+from hydrogram import filters, enums
 from ..sample_config import Config
 import logging
 log = logging.getLogger(__name__)

@@ -7,8 +7,8 @@ from usrbot import Config
 from usrbot.bot.main import main # async
 
 
-from pyrogram import Client, filters, __version__ as pyro_version
-from pyrogram.enums import ParseMode
+from hydrogram import Client, filters, __version__ as pyro_version
+from hydrogram.enums import ParseMode
 
 import functools
 # import schedule # https://schedule.readthedocs.io/en/stable/

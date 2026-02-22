@@ -1,7 +1,7 @@
 # __command__ = ".restart"
 # __info__ = "Restarts the bot"
 
-from pyrogram import filters
+from hydrogram import filters
 from ..usrbot import UsrBot
 import os
 import logging

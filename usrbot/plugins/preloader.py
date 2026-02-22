@@ -3,7 +3,7 @@
 
 
 
-from pyrogram import filters
+from hydrogram import filters
 from ..usrbot import UsrBot
 import logging
 from sys import getsizeof

@@ -2,7 +2,7 @@ __command__ = ".update"
 __info__ = "`.update update the code"
 
 
-from pyrogram import filters
+from hydrogram import filters
 from ..usrbot import UsrBot
 import os
 import shlex, subprocess

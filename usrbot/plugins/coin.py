@@ -2,7 +2,7 @@ __command__ = ".coin"
 __info__ = "`.coin For best choice Yes/No"
 
 
-from pyrogram import filters
+from hydrogram import filters
 from ..usrbot import UsrBot
 import logging
 from pathlib import Path

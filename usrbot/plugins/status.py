@@ -2,7 +2,7 @@ __command__ = ".status"
 __info__ = "`.status Show status of server"
 
 
-from pyrogram import filters
+from hydrogram import filters
 from ..usrbot import UsrBot
 import os
 import shlex, subprocess

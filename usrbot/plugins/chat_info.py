@@ -2,7 +2,7 @@ __command__ = ".chat_info"
 __info__ = "`.chat_info chat_id, "
 
 
-from pyrogram import filters
+from hydrogram import filters
 from ..usrbot import UsrBot
 import logging
 from pathlib import Path
