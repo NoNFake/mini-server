@@ -82,7 +82,13 @@ async def proccess_batch(chat_id: int, client: UsrBot):
         reply = await generate_text(user_input)
         
         if reply:
-            clean_reply = reply.replace("**", "").replace("###", "").strip()
+
+            if "SILENCE:" in reply:
+                 print("Юра решил промолчать...")
+                 return 
+
+
+            clean_reply = reply.replace("REPLY:", "").replace("**", "").replace("###", "").replace("{", "").replace("}", "").replace("-", "").replace("—", "").strip()
             await memmories(chat_id, bot_answer=clean_reply)
             await client.send_message(chat_id, clean_reply)
             
