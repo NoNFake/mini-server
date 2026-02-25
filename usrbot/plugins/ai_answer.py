@@ -145,7 +145,7 @@ async def ai_auto_responder(client, message):
 
     async def waiter():
         try:
-            await asyncio.sleep(rnd.randint(10, 15))
+            await asyncio.sleep(rnd.randint(5, 8))
             await proccess_batch(chat_id, client)
         except asyncio.CancelledError: pass
     user_contexts[chat_id]["task"] = asyncio.create_task(waiter())
